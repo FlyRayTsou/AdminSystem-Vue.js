@@ -24,3 +24,11 @@ Route::get('/member/info/{name}', function($name) {
 		"name" => $name
 	]);
 });
+
+
+Route::group(['prefix' => 'blog',
+			  'as' => 'blog/',
+			  'namespace' => 'Blog'],
+			  function(){
+			  		Route::get('/post/{post_id}', "ExamplePostController@show");
+			  });
