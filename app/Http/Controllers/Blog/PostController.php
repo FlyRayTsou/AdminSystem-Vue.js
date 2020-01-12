@@ -52,7 +52,7 @@ class PostController extends Controller
         Log::info("Store new blog post: id = $post->id");
 
         return redirect()->action(
-            'Blog\PostController@show', ['id' => $post->id]
+            'Blog\PostController@show', [$post->id]
         );
     }
 
