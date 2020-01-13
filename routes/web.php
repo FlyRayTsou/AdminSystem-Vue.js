@@ -40,6 +40,14 @@ Route::get('/images/upload', function(){
 });
 
 Route::post('/images/upload', function(Request $request) {
+	Validator::make($request->all(), [
+        'file' => 'required|image',
+    ])->validate();
+    /*
+    $validate = $request->validate([
+        'file' => 'required|image',
+    ]);
+    */
 	if($request->hasFile('file')){
 		$image = $request->file('file');
 		$file_path = $image->store('public');
