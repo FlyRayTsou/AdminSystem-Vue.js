@@ -16,7 +16,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = BlogPost::paginate(10);
+
+        return View("blog/index", [
+            "posts"=>$posts
+        ]);
     }
 
     /**
