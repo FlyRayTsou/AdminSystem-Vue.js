@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
+use App\Services\TestService;
 
 class PostTest extends TestCase
 {
@@ -15,4 +16,11 @@ class PostTest extends TestCase
     {
         $this->assertTrue(true);
     }
+
+    public function testException()
+	{
+	    $this->expectException(\InvalidArgumentException::class);
+	    $service = new TestService();
+	    $service->invalidArgument();
+	}
 }
