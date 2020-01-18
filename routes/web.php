@@ -54,3 +54,9 @@ Route::post('/images/upload', function(Request $request) {
 	}
 	return redirect(Storage::url($file_path));
 })->name('image.upload');
+
+Route::get('/header', function (){
+    return response('测试响应头')
+        ->header('X-Header-One', 'Laravel学院')
+        ->header('X-Header-Two', 'HTTP 功能测试');
+});

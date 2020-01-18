@@ -18,4 +18,12 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function testHeader()
+    {
+        $response = $this->get('/header');
+
+        $response->assertHeader('X-Header-One', 'Laravel学院')
+        ->assertHeader('X-Header-Two', 'HTTP 功能测试');
+    }
 }
