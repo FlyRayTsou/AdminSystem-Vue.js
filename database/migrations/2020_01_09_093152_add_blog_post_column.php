@@ -14,8 +14,8 @@ class AddBlogPostColumn extends Migration
     public function up()
     {
         Schema::table('blog_post', function (Blueprint $table) {
-            $table->string('title', 255);
-            $table->longText('content');
+            $table->string('title', 255)->nullable();
+            $table->longText('content')->nullable();
         });
     }
 
