@@ -7,19 +7,22 @@
             <img class="rounded-circle" src="https://instagram.ftpe9-1.fna.fbcdn.net/v/t51.2885-19/s150x150/70985486_577637296311063_2240788552625422336_n.jpg?_nc_ht=instagram.ftpe9-1.fna.fbcdn.net&_nc_ohc=hykHA9p_5BQAX_HISaY&oh=209d5f32bae8b33a446c96fc968b382b&oe=5ED1BAD7">
         </div>
         <div class="col-9 pt-5">
-            <div><h1>{{ $user->username }}</h1></div>
+            <div class="d-flex justify-content-between align-items-baseline">
+                <h1>{{ $user->username }}</h1>
+                <a href="#">Add New Post</a>
+            </div>
             <div class="d-flex">
                 <div class="pr-5"><strong>232</strong> posts</div>
                 <div class="pr-5"><strong>232</strong> posts</div>
                 <div class="pr-5"><strong>232</strong> posts</div>
             </div>
             <div class="pt-4 font-weight-bold">
-                FreecodeCamp.org
+                {{ $user->profile->title }}
             </div>
             <div>
-                An article is a word that is used with a noun to specify grammatical definiteness of the noun, and in some languages extending to volume or numerical scope.
+                {{ $user->profile->description }}
             </div>
-            <div><a href="#">www.ilong-termcare.com</a></div>
+            <div><a href="#">{{ $user->profile->url ?? 'N/A ' }}</a></div>
         </div>
     </div>
 
