@@ -13,10 +13,13 @@ class PostsController extends Controller
 
     public function store()
     {
-    	request()->validate([
+    	$data = request()->validate([
     		'caption' => 'required',
-    		'image' => 'required'
+    		'image' => 'required|image'
     	]);
+
+        auth()->user()->posts()->create($data);
+
     	dd(request()->all());
     }
 }
