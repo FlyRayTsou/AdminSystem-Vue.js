@@ -27,15 +27,11 @@
     </div>
 
     <div class="row pt-5">
-        <div class="col-4">
-            <img class="w-100" src="https://instagram.ftpe9-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c2.0.746.746a/s640x640/67559739_629784504178516_8813208697620789350_n.jpg?_nc_ht=instagram.ftpe9-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=4-x-_5NKnOQAX8CS_kH&oh=89d372245d4f40d5bc63d5fb6d480e28&oe=5EDBCB59">
-        </div>
-        <div class="col-4">
-            <img class="w-100" src="https://instagram.ftpe9-1.fna.fbcdn.net/v/t51.2885-15/e35/c0.167.1347.1347a/s480x480/66224636_414103902538030_6243089024351039256_n.jpg?_nc_ht=instagram.ftpe9-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=ykCbKLG-YV4AX8S2luU&oh=ffd22feb0fb86d382269ba2cec0f681c&oe=5E9E1C4E">
-        </div>
-        <div class="col-4">
-            <img class="w-100" src="https://instagram.ftpe7-3.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.100.800.800a/s640x640/65266892_176338163385050_3225788486614017750_n.jpg?_nc_ht=instagram.ftpe7-3.fna.fbcdn.net&_nc_cat=102&_nc_ohc=w9QvVdRPtGcAX8mZu3a&oh=1816d3d0bc32842ffbadd37502af08f6&oe=5EDA0DDA">
-        </div>
+        @foreach($user->posts as $post)
+            <div class="col-4">
+                <img class="w-100" src="/storage/{{ $post->image }}">
+            </div>
+        @endforeach
     </div>
 </div>
 @endsection
