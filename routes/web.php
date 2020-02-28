@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Mail\NewUserWelcomeMail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,10 @@ use Illuminate\Http\Request;
 */
 
 Auth::routes();
+
+Route::get('/email', function () {
+	return new NewUserWelcomeMail();
+});
 
 Route::post('follow/{user}', 'FollowsController@store');
 
