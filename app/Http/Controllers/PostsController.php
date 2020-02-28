@@ -18,9 +18,9 @@ class PostsController extends Controller
     {
         $users = auth()->user()->following()->pluck('profiles.user_id');
 
-        $posts = Post::whereIn('user_id', $users)->orderBy('created_at', 'DESC')->get();
+        $posts = Post::whereIn('user_id', $users)->latest()->get();
 
-        dd($posts);
+        return view('posts.index', compact('posts'));
     }
 
     public function create()
